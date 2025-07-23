@@ -72,7 +72,7 @@
                   </label>
                 </div>
               {{end}}
-            {{else if eq $q.Type "TrueFalse"}}
+            {{else if or (eq $q.Type "True") (eq $q.Type "False")}}
               <!-- True/False: always True/False radios -->
               <div class="form-check option-radio">
                 <input class="form-check-input" type="radio" name="q{{$index}}" id="q{{$index}}_true" value="True" required>

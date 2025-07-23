@@ -19,24 +19,23 @@ type TestMetadata struct {
 }
 
 type Question struct {
-	Title           string            `json:"Title"`
-	Domain          string            `json:"Domain"`
-	Question        string            `json:"Question"`
-	Options         map[string]string `json:"Options,omitempty"`       // Only for Single/Multiple
-	Type            string            `json:"Type"`                    // "Single", "Multiple", "TrueFalse"
-	CorrectAnswer   []string          `json:"CorrectAnswer,omitempty"` // For Single/Multiple
-	CorrectAnswerTF string            `json:"CorrectAnswer,omitempty"` // For TrueFalse
-	Explanation     string            `json:"Explanation"`
+	Title         string            `json:"Title"`
+	Domain        string            `json:"Domain"`
+	Question      string            `json:"Question"`
+	Options       map[string]string `json:"Options,omitempty"`
+	Type          string            `json:"Type"`                    // "Single", "Multiple", "True", "False"
+	CorrectAnswer []string          `json:"CorrectAnswer,omitempty"` // For Single/Multiple only
+	Explanation   string            `json:"Explanation"`
 }
 
 type AnswerResult struct {
-	Question        string
-	UserAnswer      []string
-	CorrectAnswer   []string
-	CorrectAnswerTF string
-	Explanation     string
-	IsCorrect       bool
-	Type            string
+	Question      string
+	UserAnswer    []string
+	CorrectAnswer []string // For Single/Multiple
+	CorrectTF     string   // For True/False: copy q.Type
+	Explanation   string
+	IsCorrect     bool
+	Type          string
 }
 
 type ResultPage struct {

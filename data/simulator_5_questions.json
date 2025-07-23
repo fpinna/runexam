@@ -12,7 +12,7 @@
     "TotalQuestions": 5,
     "ExamDomains": [
       "One", 
-      "TrueFalse",   
+      "True/False",   
       "Multiple"
     ],
     "ExamDescription": "Question test data"
@@ -54,9 +54,15 @@
     {
       "Title": "True/False Test",
       "Domain": "Storage",
-      "Question": "True or false question",
-      "Type": "TrueFalse",
-      "CorrectAnswer": "True",
+      "Question": "True or false question (True)",
+      "Type": "True",
+      "Explanation": ""
+    },
+    {
+      "Title": "True/False Test",
+      "Domain": "Storage",
+      "Question": "True or false question (False)",
+      "Type": "False",
       "Explanation": ""
     }
   ]    

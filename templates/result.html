@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-      .question-card {
-        border-left: 5px solid #eee;
-        margin-bottom: 16px;
-      }
+      .question-card { border-left: 5px solid #eee; margin-bottom: 16px; }
       .answer-correct { color: #198754; font-weight: bold; }
       .answer-wrong { color: #dc3545; font-weight: bold; }
       .correct-label { background: #198754; color: #fff; padding: 2px 10px; border-radius: 8px; margin-left: 8px;}
@@ -61,24 +58,41 @@
             </h5>
             <p class="mb-2"><b>{{$res.Question}}</b></p>
             <ul>
-              <li>
-                <span>Your answer(s): </span>
-                {{if $res.UserAnswer}}
-                  {{range $i, $ans := $res.UserAnswer}}
+              {{if or (eq $res.Type "True") (eq $res.Type "False")}}
+                <li>
+                  <span>Your answer: </span>
+                  {{if $res.UserAnswer}}
                     <span class="{{if $res.IsCorrect}}answer-correct{{else}}answer-wrong{{end}}">
-                      {{$ans}}
-                    </span>{{if lt (add1 $i) (len $res.UserAnswer)}}, {{end}}
+                      {{$res.UserAnswer | index 0}}
+                    </span>
+                  {{else}}
+                    <span class="answer-wrong">No answer</span>
                   {{end}}
-                {{else}}
-                  <span class="answer-wrong">No answer</span>
-                {{end}}
-              </li>
-              <li>
-                <span>Correct answer(s): </span>
-                {{range $j, $corr := $res.CorrectAnswer}}
-                  <span class="answer-correct">{{$corr}}</span>{{if lt (add1 $j) (len $res.CorrectAnswer)}}, {{end}}
-                {{end}}
-              </li>
+                </li>
+                <li>
+                  <span>Correct answer: </span>
+                  <span class="answer-correct">{{$res.CorrectTF}}</span>
+                </li>
+              {{else}}
+                <li>
+                  <span>Your answer(s): </span>
+                  {{if $res.UserAnswer}}
+                    {{range $i, $ans := $res.UserAnswer}}
+                      <span class="{{if $res.IsCorrect}}answer-correct{{else}}answer-wrong{{end}}">
+                        {{$ans}}
+                      </span>{{if lt (add1 $i) (len $res.UserAnswer)}}, {{end}}
+                    {{end}}
+                  {{else}}
+                    <span class="answer-wrong">No answer</span>
+                  {{end}}
+                </li>
+                <li>
+                  <span>Correct answer(s): </span>
+                  {{range $j, $corr := $res.CorrectAnswer}}
+                    <span class="answer-correct">{{$corr}}</span>{{if lt (add1 $j) (len $res.CorrectAnswer)}}, {{end}}
+                  {{end}}
+                </li>
+              {{end}}
             </ul>
             <div class="alert alert-info my-2">
               <strong>Explanation:</strong> {{$res.Explanation}}

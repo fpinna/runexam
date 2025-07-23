@@ -77,6 +77,7 @@ func handleSubmit(w http.ResponseWriter, r *http.Request) {
 		fieldName := "q" + strconv.Itoa(i)
 		var userAns []string
 		var isCorrect bool
+		var correctTF string
 
 		switch q.Type {
 		case "Multiple":
@@ -91,11 +92,12 @@ func handleSubmit(w http.ResponseWriter, r *http.Request) {
 				userAns = []string{}
 				isCorrect = false
 			}
-		case "TrueFalse":
+		case "True", "False":
 			ans := r.Form.Get(fieldName)
+			correctTF = q.Type // Type is the correct answer!
 			if ans != "" {
 				userAns = []string{ans}
-				isCorrect = userAns[0] == q.CorrectAnswerTF
+				isCorrect = userAns[0] == correctTF
 			} else {
 				userAns = []string{}
 				isCorrect = false
@@ -111,13 +113,13 @@ func handleSubmit(w http.ResponseWriter, r *http.Request) {
 		}
 
 		results = append(results, types.AnswerResult{
-			Question:        q.Question,
-			UserAnswer:      userAns,
-			CorrectAnswer:   q.CorrectAnswer,
-			CorrectAnswerTF: q.CorrectAnswerTF,
-			Explanation:     q.Explanation,
-			IsCorrect:       isCorrect,
-			Type:            q.Type,
+			Question:      q.Question,
+			UserAnswer:    userAns,
+			CorrectAnswer: q.CorrectAnswer,
+			CorrectTF:     correctTF,
+			Explanation:   q.Explanation,
+			IsCorrect:     isCorrect,
+			Type:          q.Type,
 		})
 
 		if isCorrect {
