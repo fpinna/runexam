@@ -11,7 +11,8 @@
 
     "TotalQuestions": 5,
     "ExamDomains": [
-      "One",    
+      "One", 
+      "TrueFalse",   
       "Multiple"
     ],
     "ExamDescription": "Question test data"
@@ -24,7 +25,7 @@
       "Options": {
         "A": "Wrong answer",
         "B": "Right answer",
-        "C": "Right",
+        "C": "Right answer too",
         "D": "Wrong answer"
       },
       "Type": "Multiple",
@@ -54,14 +55,8 @@
       "Title": "True/False Test",
       "Domain": "Storage",
       "Question": "True or false question",
-      "Options": {
-        "A": "True",
-        "B": "False"
-      },
       "Type": "TrueFalse",
-      "CorrectAnswer": [
-        "A"
-      ],
+      "CorrectAnswer": "True",
       "Explanation": ""
     }
   ]    

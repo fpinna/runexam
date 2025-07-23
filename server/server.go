@@ -66,7 +66,7 @@ func showExam(w http.ResponseWriter, r *http.Request) {
 
 func handleSubmit(w http.ResponseWriter, r *http.Request) {
 	if err := r.ParseForm(); err != nil {
-		http.Error(w, "Error processing answers", http.StatusBadRequest)
+		http.Error(w, "Failed to parse form", http.StatusBadRequest)
 		return
 	}
 
@@ -74,18 +74,53 @@ func handleSubmit(w http.ResponseWriter, r *http.Request) {
 	var results []types.AnswerResult
 
 	for i, q := range currentQuestions {
-		ans := r.Form.Get("q" + strconv.Itoa(i))
-		correctAns := q.CorrectAnswer[0]
+		fieldName := "q" + strconv.Itoa(i)
+		var userAns []string
+		var isCorrect bool
+
+		switch q.Type {
+		case "Multiple":
+			userAns = r.Form[fieldName]
+			isCorrect = utils.EqualStringSlices(userAns, q.CorrectAnswer)
+		case "Single":
+			ans := r.Form.Get(fieldName)
+			if ans != "" && len(q.CorrectAnswer) > 0 {
+				userAns = []string{ans}
+				isCorrect = userAns[0] == q.CorrectAnswer[0]
+			} else {
+				userAns = []string{}
+				isCorrect = false
+			}
+		case "TrueFalse":
+			ans := r.Form.Get(fieldName)
+			if ans != "" {
+				userAns = []string{ans}
+				isCorrect = userAns[0] == q.CorrectAnswerTF
+			} else {
+				userAns = []string{}
+				isCorrect = false
+			}
+		default:
+			ans := r.Form.Get(fieldName)
+			if ans != "" {
+				userAns = []string{ans}
+			} else {
+				userAns = []string{}
+			}
+			isCorrect = false
+		}
 
 		results = append(results, types.AnswerResult{
-			Question:      q.Question,
-			UserAnswer:    ans,
-			CorrectAnswer: correctAns,
-			Explanation:   q.Explanation,
-			IsCorrect:     ans == correctAns,
+			Question:        q.Question,
+			UserAnswer:      userAns,
+			CorrectAnswer:   q.CorrectAnswer,
+			CorrectAnswerTF: q.CorrectAnswerTF,
+			Explanation:     q.Explanation,
+			IsCorrect:       isCorrect,
+			Type:            q.Type,
 		})
 
-		if ans == correctAns {
+		if isCorrect {
 			correct++
 		}
 	}

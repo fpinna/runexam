@@ -7,27 +7,36 @@ type Exam struct {
 
 type TestMetadata struct {
 	TestName          string   `json:"TestName"`
+	TestDescription   string   `json:"TestDescription"`
 	PassingPercentage float64  `json:"PassingPercentage"`
+	TestVersion       string   `json:"TestVersion"`
+	TestAuthor        string   `json:"TestAuthor"`
+	TestDate          string   `json:"TestDate"`
+	TestDuration      int      `json:"TestDuration"`
 	ExamDomains       []string `json:"ExamDomains"`
 	ExamDescription   string   `json:"ExamDescription"`
+	TotalQuestions    int      `json:"TotalQuestions"`
 }
 
 type Question struct {
-	Title         string            `json:"Title"`
-	Domain        string            `json:"Domain"`
-	Question      string            `json:"Question"`
-	Options       map[string]string `json:"Options"`
-	Type          string            `json:"Type"`
-	CorrectAnswer []string          `json:"CorrectAnswer"`
-	Explanation   string            `json:"Explanation"`
+	Title           string            `json:"Title"`
+	Domain          string            `json:"Domain"`
+	Question        string            `json:"Question"`
+	Options         map[string]string `json:"Options,omitempty"`       // Only for Single/Multiple
+	Type            string            `json:"Type"`                    // "Single", "Multiple", "TrueFalse"
+	CorrectAnswer   []string          `json:"CorrectAnswer,omitempty"` // For Single/Multiple
+	CorrectAnswerTF string            `json:"CorrectAnswer,omitempty"` // For TrueFalse
+	Explanation     string            `json:"Explanation"`
 }
 
 type AnswerResult struct {
-	Question      string
-	UserAnswer    string
-	CorrectAnswer string
-	Explanation   string
-	IsCorrect     bool
+	Question        string
+	UserAnswer      []string
+	CorrectAnswer   []string
+	CorrectAnswerTF string
+	Explanation     string
+	IsCorrect       bool
+	Type            string
 }
 
 type ResultPage struct {
