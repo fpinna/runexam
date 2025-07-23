@@ -1,0 +1,68 @@
+{
+  "TestMetadata": {
+    "TestName": "Test Simulator",
+    "TestDescription": "This is a test simulator for Kubernetes exam preparation.",
+    "PassingPercentage": 70,
+
+    "TestVersion": "1.0",
+    "TestAuthor": "Kubernetes Community",
+    "TestDate": "2023-10-01",
+    "TestDuration": 60,
+
+    "TotalQuestions": 5,
+    "ExamDomains": [
+      "One",    
+      "Multiple"
+    ],
+    "ExamDescription": "Question test data"
+  },
+  "Questions": [
+    {
+      "Title": "Answer Test",
+      "Domain": "Scheduling",
+      "Question": "Multiple choice question",
+      "Options": {
+        "A": "Wrong answer",
+        "B": "Right answer",
+        "C": "Right",
+        "D": "Wrong answer"
+      },
+      "Type": "Multiple",
+      "CorrectAnswer": [
+        "B",
+        "C"
+      ],
+      "Explanation": "This is a test question to verify multiple choice answers."
+    },
+    {
+      "Title": "Single Choice Test",
+      "Domain": "Networking",
+      "Question": "Single choice question",
+      "Options": {
+        "A": "Wrong answer",
+        "B": "Right answer",
+        "C": "Wrong answer",
+        "D": "Wrong answer"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "This is a test question to verify single choice answers."
+    },
+    {
+      "Title": "True/False Test",
+      "Domain": "Storage",
+      "Question": "True or false question",
+      "Options": {
+        "A": "True",
+        "B": "False"
+      },
+      "Type": "TrueFalse",
+      "CorrectAnswer": [
+        "A"
+      ],
+      "Explanation": ""
+    }
+  ]    
+}

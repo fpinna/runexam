@@ -1,0 +1,983 @@
+{
+  "TestMetadata": {
+    "TestName": "KCNA Simulator",
+    "TotalQuestions": 60,
+    "PassingPercentage": 75,
+    "PassingScore": 40,
+    "ExamDomains": [
+      "Kubernetes Fundamentals",
+      "Scheduling",
+      "Networking",
+      "Security",
+      "Storage",
+      "Service Mesh",
+      "Observability",
+      "Cloud Native Architecture",
+      "GitOps and CI/CD",
+      "Container Runtime"
+    ],
+    "ExamDescription": "The KCNA exam covers foundational Kubernetes knowledge, including cluster architecture, scheduling, networking, security best practices, storage, observability tools, service mesh concepts, and cloud-native delivery patterns like GitOps."
+  },
+  "Questions": [
+    {
+      "Title": "Scheduling - Hard (Q1)",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals (Q2)",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals (Q3)",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard (Q4)",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals (Q5)",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals (Q6)",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard (Q7)",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals (Q8)",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals (Q9)",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    },
+    {
+      "Title": "Scheduling - Hard ",
+      "Domain": "Scheduling",
+      "Question": "A Pod is not being scheduled even though nodes have sufficient resources. Logs show \"0/5 nodes are available: 5 node(s) had volume node affinity conflict\". What could be the cause?",
+      "Options": {
+        "A": "The Pod is referencing a non-existent ConfigMap",
+        "B": "The PVC used requires a volume available in a specific zone not matching the node's labels",
+        "C": "The scheduler is tainted",
+        "D": "The Deployment is missing a service definition"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Volume node affinity conflict indicates the PersistentVolumeClaim requires volumes in specific zones that do not match node labels, so pods cannot schedule."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "Which Kubernetes resource ensures that a specific number of pod replicas are always running, even if some fail?",
+      "Options": {
+        "A": "DaemonSet",
+        "B": "Job",
+        "C": "ReplicaSet",
+        "D": "StatefulSet"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "ReplicaSet ensures the desired number of pod replicas are always running by replacing failed pods."
+    },
+    {
+      "Title": "Kubernetes Fundamentals ",
+      "Domain": "Kubernetes Fundamentals",
+      "Question": "What is a key difference between a Job and a CronJob in Kubernetes?",
+      "Options": {
+        "A": "A CronJob can run continuously, whereas a Job is only for one-time execution",
+        "B": "A CronJob manages Job executions on a time-based schedule",
+        "C": "A Job runs on a schedule while CronJob runs once",
+        "D": "Job requires manual triggering, CronJob does not"
+      },
+      "Type": "One",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "CronJob schedules Jobs to run periodically at specified times, unlike Job which runs once."
+    }
+  ]
+}
