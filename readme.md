@@ -1,3 +1,7 @@
+#
+# Working in progress 
+#
+
 # RunExam
 
 [![Docker Hub](https://img.shields.io/badge/docker-fpinna/runexam-blue?logo=docker)](https://hub.docker.com/r/fpinna/runexam)
@@ -16,6 +20,8 @@ It works with custom JSON files defining your own set of questions.
 - Instant correction and review
 - PDF export matching your exam report
 - Easily pluggable JSON format for new exams
+- [Standard exam definition](exam-defs.md) - json format
+
 
 ---
 
