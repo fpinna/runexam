@@ -2,6 +2,7 @@ package server
 
 import (
 	"encoding/json"
+	"fmt"
 	"html/template"
 	"log"
 	"math/rand"
@@ -111,6 +112,15 @@ func handleSubmit(w http.ResponseWriter, r *http.Request) {
 			}
 			isCorrect = false
 		}
+
+		// Debug
+		fmt.Printf("Processing question %d: %s\n", i+1, q.Question)
+		fmt.Printf("User answers: %v, Correct answers: %v\n", userAns, correctTF)
+		fmt.Printf("Question type: %s\n", q.Type)
+		fmt.Printf("Field name: %s\n", fieldName)
+		fmt.Printf("Form data: %v\n", r.Form)
+		fmt.Printf("Title: %s, Domain: %s\n", q.Title, q.Domain)
+		fmt.Println("-----------------------------------")
 
 		results = append(results, types.AnswerResult{
 			Question:      q.Question,
