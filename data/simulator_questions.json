@@ -23,14 +23,14 @@
       "Domain": "Scheduling",
       "Question": "Multiple choice question",
       "Options": {
-        "A": "Wrong answer",
-        "B": "Right answer",
+        "A": "Right answer",
+        "B": "Wrong answer",
         "C": "Right answer too",
         "D": "Wrong answer"
       },
       "Type": "Multiple",
       "CorrectAnswer": [
-        "B",
+        "A",
         "C"
       ],
       "Explanation": "This is a test question to verify multiple choice answers."
@@ -50,20 +50,6 @@
         "B"
       ],
       "Explanation": "This is a test question to verify single choice answers."
-    },
-    {
-      "Title": "True title",
-      "Domain": "Networking",
-      "Question": "True question (True)",
-      "Type": "True",
-      "Explanation": "This is true true"
-    },
-    {
-      "Title": "False title",
-      "Domain": "Storage",
-      "Question": "False question (False)",
-      "Type": "False",
-      "Explanation": "This is false false"
     }
   ]    
 }

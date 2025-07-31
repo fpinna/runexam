@@ -13,7 +13,7 @@ import (
 	"github.com/chromedp/chromedp"
 )
 
-// GeneratePDF - Generates a PDF from the result page data
+// GeneratePDF - generates a PDF from the ResultPage data
 func GeneratePDF(data types.ResultPage) []byte {
 	// Render PDF Template
 	tpl, err := template.New("pdf.html").Funcs(template.FuncMap{
@@ -32,7 +32,6 @@ func GeneratePDF(data types.ResultPage) []byte {
 
 	htmlStr := htmlBuf.String()
 
-	// Usa chromedp para renderizar o HTML e exportar como PDF
 	ctx, cancel := chromedp.NewContext(context.Background())
 	defer cancel()
 
