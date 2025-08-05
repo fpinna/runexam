@@ -11,7 +11,7 @@
 
     "TotalQuestions": 5,
     "ExamDomains": [
-      "One", 
+      "Single", 
       "True/False",   
       "Multiple"
     ],
