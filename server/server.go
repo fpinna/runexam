@@ -72,16 +72,8 @@ func handleSubmit(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	fmt.Println("=== FULL FORM DUMP ===")
-	for key, val := range r.Form {
-		fmt.Printf("Key: %s => Values: %v\n", key, val)
-	}
-	fmt.Println("======================")
-
 	correct := 0
 	var results []types.AnswerResult
-
-	fmt.Println(">>>>>> ", currentQuestions)
 
 	for i, q := range currentQuestions {
 		// fieldName := "q" + strconv.Itoa(i)
@@ -93,23 +85,10 @@ func handleSubmit(w http.ResponseWriter, r *http.Request) {
 		case "Multiple":
 			fieldName := fmt.Sprintf("q%d[]", i)
 			userAns = r.Form[fieldName]
-			// ans := r.Form.Get(fieldName)
-
 			isCorrect = utils.MultipleCheck(userAns, q.CorrectAnswer)
-			// correctTF = q.CorrectAnswer[0] + q.CorrectAnswer[1]
-
-			fmt.Println("Processing Multiple choice question")
-			fmt.Println("Received answer:", userAns)
-			fmt.Println("Correct answers:", q.CorrectAnswer)
-			fmt.Println("size:", len(q.CorrectAnswer))
-			fmt.Println("- - -")
-
 		case "Single":
 			fieldName := "q" + strconv.Itoa(i)
 			ans := r.Form.Get(fieldName)
-			// fmt.Println("Received answer:", ans)
-			// fmt.Printf("Correct answers: %v - size: %d", q.CorrectAnswer, len(q.CorrectAnswer))
-
 			if ans != "" && len(q.CorrectAnswer) == 1 {
 				userAns = []string{ans}
 				isCorrect = userAns[0] == q.CorrectAnswer[0]
@@ -118,8 +97,7 @@ func handleSubmit(w http.ResponseWriter, r *http.Request) {
 				isCorrect = false
 			}
 		case "True", "False":
-
-			// fmt.Println("Processing True/False question")
+			// TODO
 			fieldName := "q" + strconv.Itoa(i)
 			ans := r.Form.Get(fieldName)
 
@@ -141,15 +119,6 @@ func handleSubmit(w http.ResponseWriter, r *http.Request) {
 			}
 			isCorrect = false
 		}
-
-		// Debug
-		// fmt.Printf("Processing question %d: %s\n", i+1, q.Question)
-		// fmt.Printf("User answers: %v, Correct answers: %v\n", userAns, correctTF)
-		// fmt.Printf("Question type: %s\n", q.Type)
-		// fmt.Printf("Field name: %s\n", fieldName)
-		// fmt.Printf("Form data: %v\n", r.Form)
-		// fmt.Printf("Title: %s, Domain: %s\n", q.Title, q.Domain)
-		// fmt.Println("-----------------------------------")
 
 		results = append(results, types.AnswerResult{
 			Question:      q.Question,
