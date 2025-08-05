@@ -2,15 +2,14 @@ package server
 
 import (
 	"encoding/json"
+	"fmt"
 	"html/template"
 	"log"
-	"math/rand"
 	"net/http"
 	"os"
 	"runexam/types"
 	"runexam/utils"
 	"strconv"
-	"time"
 )
 
 var (
@@ -46,17 +45,17 @@ func getFuncMap() template.FuncMap {
 	}
 }
 
-// Função para copiar e embaralhar um slice de questões
-func shuffleQuestions(questions []types.Question) []types.Question {
-	shuffled := make([]types.Question, len(questions))
-	copy(shuffled, questions)
-	rand.Seed(time.Now().UnixNano())
-	rand.Shuffle(len(shuffled), func(i, j int) { shuffled[i], shuffled[j] = shuffled[j], shuffled[i] })
-	return shuffled
-}
+// func shuffleQuestions(questions []types.Question) []types.Question {
+// 	shuffled := make([]types.Question, len(questions))
+// 	copy(shuffled, questions)
+// 	rand.Seed(time.Now().UnixNano())
+// 	rand.Shuffle(len(shuffled), func(i, j int) { shuffled[i], shuffled[j] = shuffled[j], shuffled[i] })
+// 	return shuffled
+// }
 
 func showExam(w http.ResponseWriter, r *http.Request) {
-	currentQuestions = shuffleQuestions(questionsData.Questions)
+	// currentQuestions = shuffleQuestions(questionsData.Questions)
+	currentQuestions = questionsData.Questions
 	examCopy := questionsData
 	examCopy.Questions = currentQuestions
 
@@ -66,26 +65,100 @@ func showExam(w http.ResponseWriter, r *http.Request) {
 
 func handleSubmit(w http.ResponseWriter, r *http.Request) {
 	if err := r.ParseForm(); err != nil {
-		http.Error(w, "Error processing answers", http.StatusBadRequest)
+		http.Error(w, "Failed to parse form", http.StatusBadRequest)
 		return
 	}
+
+	fmt.Println("=== FULL FORM DUMP ===")
+	for key, val := range r.Form {
+		fmt.Printf("Key: %s => Values: %v\n", key, val)
+	}
+	fmt.Println("======================")
 
 	correct := 0
 	var results []types.AnswerResult
 
+	fmt.Println(">>>>>> ", currentQuestions)
+
 	for i, q := range currentQuestions {
-		ans := r.Form.Get("q" + strconv.Itoa(i))
-		correctAns := q.CorrectAnswer[0]
+		// fieldName := "q" + strconv.Itoa(i)
+		var userAns []string
+		var isCorrect bool
+		var correctTF string
+
+		switch q.Type {
+		case "Multiple":
+			fieldName := fmt.Sprintf("q%d[]", i)
+			userAns = r.Form[fieldName]
+			// ans := r.Form.Get(fieldName)
+
+			isCorrect = utils.MultipleCheck(userAns, q.CorrectAnswer)
+			// correctTF = q.CorrectAnswer[0] + q.CorrectAnswer[1]
+
+			fmt.Println("Processing Multiple choice question")
+			fmt.Println("Received answer:", userAns)
+			fmt.Println("Correct answers:", q.CorrectAnswer)
+			fmt.Println("size:", len(q.CorrectAnswer))
+			fmt.Println("- - -")
+
+		case "Single":
+			fieldName := "q" + strconv.Itoa(i)
+			ans := r.Form.Get(fieldName)
+			// fmt.Println("Received answer:", ans)
+			// fmt.Printf("Correct answers: %v - size: %d", q.CorrectAnswer, len(q.CorrectAnswer))
+
+			if ans != "" && len(q.CorrectAnswer) == 1 {
+				userAns = []string{ans}
+				isCorrect = userAns[0] == q.CorrectAnswer[0]
+			} else {
+				userAns = []string{}
+				isCorrect = false
+			}
+		case "True", "False":
+
+			// fmt.Println("Processing True/False question")
+			fieldName := "q" + strconv.Itoa(i)
+			ans := r.Form.Get(fieldName)
+
+			correctTF = q.Type // Type is the correct answer!
+			if ans != "" {
+				userAns = []string{ans}
+				isCorrect = userAns[0] == correctTF
+			} else {
+				userAns = []string{}
+				isCorrect = false
+			}
+		default:
+			fieldName := "q" + strconv.Itoa(i)
+			ans := r.Form.Get(fieldName)
+			if ans != "" {
+				userAns = []string{ans}
+			} else {
+				userAns = []string{}
+			}
+			isCorrect = false
+		}
+
+		// Debug
+		// fmt.Printf("Processing question %d: %s\n", i+1, q.Question)
+		// fmt.Printf("User answers: %v, Correct answers: %v\n", userAns, correctTF)
+		// fmt.Printf("Question type: %s\n", q.Type)
+		// fmt.Printf("Field name: %s\n", fieldName)
+		// fmt.Printf("Form data: %v\n", r.Form)
+		// fmt.Printf("Title: %s, Domain: %s\n", q.Title, q.Domain)
+		// fmt.Println("-----------------------------------")
 
 		results = append(results, types.AnswerResult{
 			Question:      q.Question,
-			UserAnswer:    ans,
-			CorrectAnswer: correctAns,
+			UserAnswer:    userAns,
+			CorrectAnswer: q.CorrectAnswer,
+			CorrectTF:     correctTF,
 			Explanation:   q.Explanation,
-			IsCorrect:     ans == correctAns,
+			IsCorrect:     isCorrect,
+			Type:          q.Type,
 		})
 
-		if ans == correctAns {
+		if isCorrect {
 			correct++
 		}
 	}

@@ -22,7 +22,7 @@ var rootCmd = &cobra.Command{
 	Run: func(cmd *cobra.Command, args []string) {
 		jsonFile = args[0]
 		if _, err := os.Stat(jsonFile); os.IsNotExist(err) {
-			fmt.Printf("Arquivo não encontrado: %s\n", jsonFile)
+			fmt.Printf("File not found: %s\n", jsonFile)
 			os.Exit(1)
 		}
 		server.StartServer(jsonFile, listen, port)
