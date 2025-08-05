@@ -1,0 +1,933 @@
+{
+  "TestMetadata": {
+    "TestName": "KCSA Realistic Exam Simulator",
+    "TestDescription": "60-question exam with only real KCSA-level questions across core domains.",
+    "PassingPercentage": 70,
+    "TestVersion": "1.0",
+    "TestAuthor": "Kubernetes Community",
+    "TestDate": "2025-08-05",
+    "TestDuration": 90,
+    "TotalQuestions": 60,
+    "ExamDomains": [
+      "Overview of Cloud Native Security",
+      "Kubernetes Cluster Component Security",
+      "Kubernetes Security Fundamentals",
+      "Kubernetes Threat Model",
+      "Platform Security",
+      "Compliance and Security Frameworks"
+    ],
+    "ExamDescription": "Simulated exam using realistic KCSA questions only."
+  },
+  "Questions": [
+    {
+      "Question": "Which of the following is NOT one of the 4Cs of Cloud Native Security?",
+      "Options": {
+        "A": "Code",
+        "B": "Cloud",
+        "C": "Culture",
+        "D": "Container"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Culture is not part of the 4Cs (Code, Container, Cluster, Cloud).",
+      "Domain": "Overview of Cloud Native Security"
+    },
+    {
+      "Question": "Which of the following are valid security frameworks for cloud-native environments?",
+      "Options": {
+        "A": "OWASP",
+        "B": "PCI DSS",
+        "C": "MITRE ATT&CK",
+        "D": "GDPR"
+      },
+      "Type": "Multiple",
+      "CorrectAnswer": [
+        "A",
+        "C"
+      ],
+      "Explanation": "OWASP and MITRE ATT&CK are cloud-native security frameworks.",
+      "Domain": "Overview of Cloud Native Security"
+    },
+    {
+      "Question": "What is a key benefit of using a managed Kubernetes cloud service?",
+      "Options": {
+        "A": "Improved application performance",
+        "B": "No need for API security",
+        "C": "Automatic patching of control plane",
+        "D": "Full control of physical servers"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Managed services handle security patching for control plane.",
+      "Domain": "Overview of Cloud Native Security"
+    },
+    {
+      "Question": "What is the purpose of the CIS Kubernetes Benchmark?",
+      "Options": {
+        "A": "To benchmark application performance",
+        "B": "To define security best practices",
+        "C": "To monitor memory usage",
+        "D": "To define network bandwidth"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "The CIS Benchmark provides security configuration guidelines.",
+      "Domain": "Overview of Cloud Native Security"
+    },
+    {
+      "Question": "Which Kubernetes component enforces authentication and authorization?",
+      "Options": {
+        "A": "Kubelet",
+        "B": "Controller Manager",
+        "C": "API Server",
+        "D": "Scheduler"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "The API server is responsible for authentication and authorization.",
+      "Domain": "Kubernetes Cluster Component Security"
+    },
+    {
+      "Question": "How can Kubelet security be enhanced?",
+      "Options": {
+        "A": "Disable authentication",
+        "B": "Run it with root access",
+        "C": "Disable anonymous-auth",
+        "D": "Expose all ports"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "anonymous-auth should be disabled for secure Kubelet configuration.",
+      "Domain": "Kubernetes Cluster Component Security"
+    },
+    {
+      "Question": "Which component in Kubernetes starts and stops containers?",
+      "Options": {
+        "A": "Controller Manager",
+        "B": "Kubelet",
+        "C": "Container Runtime",
+        "D": "Etcd"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "The container runtime handles container lifecycle.",
+      "Domain": "Kubernetes Cluster Component Security"
+    },
+    {
+      "Question": "What is the most restrictive Pod Security Standard level?",
+      "Options": {
+        "A": "Privileged",
+        "B": "Baseline",
+        "C": "Restricted",
+        "D": "Permissive"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Restricted applies tightest security policies.",
+      "Domain": "Kubernetes Security Fundamentals"
+    },
+    {
+      "Question": "Which RBAC resource binds users to roles?",
+      "Options": {
+        "A": "Role",
+        "B": "ClusterRole",
+        "C": "RoleBinding",
+        "D": "Policy"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "RoleBinding associates subjects with Roles or ClusterRoles.",
+      "Domain": "Kubernetes Security Fundamentals"
+    },
+    {
+      "Question": "What defines a trust boundary in Kubernetes?",
+      "Options": {
+        "A": "A firewall",
+        "B": "A set of network rules",
+        "C": "A boundary requiring validation and control",
+        "D": "A control plane component"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Trust boundaries separate levels of access and trust.",
+      "Domain": "Kubernetes Threat Model"
+    },
+    {
+      "Question": "What threat is associated with privilege escalation?",
+      "Options": {
+        "A": "Limiting permissions",
+        "B": "Creating RBAC wildcards",
+        "C": "Restricting service accounts",
+        "D": "Using namespaces"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Wildcards in RBAC can allow unintended privilege escalation.",
+      "Domain": "Kubernetes Threat Model"
+    },
+    {
+      "Question": "Which of the following helps secure the container supply chain?",
+      "Options": {
+        "A": "SBOM",
+        "B": "COSIGN",
+        "C": "Latest image tag",
+        "D": "Disable image scanning"
+      },
+      "Type": "Multiple",
+      "CorrectAnswer": [
+        "A",
+        "B"
+      ],
+      "Explanation": "SBOM and Cosign help verify and secure images.",
+      "Domain": "Platform Security"
+    },
+    {
+      "Question": "What is the purpose of imagePullSecrets in Kubernetes?",
+      "Options": {
+        "A": "To pull secrets from other pods",
+        "B": "To authenticate with private registries",
+        "C": "To store configuration data",
+        "D": "To configure RBAC"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "imagePullSecrets are used to authenticate with private container registries.",
+      "Domain": "Platform Security"
+    },
+    {
+      "Question": "Which framework is used to protect health data in the USA?",
+      "Options": {
+        "A": "GDPR",
+        "B": "HIPAA",
+        "C": "MITRE",
+        "D": "STRIDE"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "HIPAA is used for healthcare data compliance in the US.",
+      "Domain": "Compliance and Security Frameworks"
+    },
+    {
+      "Question": "Which of the following are threat modeling frameworks?",
+      "Options": {
+        "A": "MITRE ATT&CK",
+        "B": "STRIDE",
+        "C": "HIPAA",
+        "D": "OWASP"
+      },
+      "Type": "Multiple",
+      "CorrectAnswer": [
+        "A",
+        "B"
+      ],
+      "Explanation": "MITRE and STRIDE are threat modeling frameworks.",
+      "Domain": "Compliance and Security Frameworks"
+    },
+    {
+      "Question": "Which of the following is NOT one of the 4Cs of Cloud Native Security?",
+      "Options": {
+        "A": "Code",
+        "B": "Cloud",
+        "C": "Culture",
+        "D": "Container"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Culture is not part of the 4Cs (Code, Container, Cluster, Cloud).",
+      "Domain": "Overview of Cloud Native Security"
+    },
+    {
+      "Question": "Which of the following are valid security frameworks for cloud-native environments?",
+      "Options": {
+        "A": "OWASP",
+        "B": "PCI DSS",
+        "C": "MITRE ATT&CK",
+        "D": "GDPR"
+      },
+      "Type": "Multiple",
+      "CorrectAnswer": [
+        "A",
+        "C"
+      ],
+      "Explanation": "OWASP and MITRE ATT&CK are cloud-native security frameworks.",
+      "Domain": "Overview of Cloud Native Security"
+    },
+    {
+      "Question": "What is a key benefit of using a managed Kubernetes cloud service?",
+      "Options": {
+        "A": "Improved application performance",
+        "B": "No need for API security",
+        "C": "Automatic patching of control plane",
+        "D": "Full control of physical servers"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Managed services handle security patching for control plane.",
+      "Domain": "Overview of Cloud Native Security"
+    },
+    {
+      "Question": "What is the purpose of the CIS Kubernetes Benchmark?",
+      "Options": {
+        "A": "To benchmark application performance",
+        "B": "To define security best practices",
+        "C": "To monitor memory usage",
+        "D": "To define network bandwidth"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "The CIS Benchmark provides security configuration guidelines.",
+      "Domain": "Overview of Cloud Native Security"
+    },
+    {
+      "Question": "Which Kubernetes component enforces authentication and authorization?",
+      "Options": {
+        "A": "Kubelet",
+        "B": "Controller Manager",
+        "C": "API Server",
+        "D": "Scheduler"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "The API server is responsible for authentication and authorization.",
+      "Domain": "Kubernetes Cluster Component Security"
+    },
+    {
+      "Question": "How can Kubelet security be enhanced?",
+      "Options": {
+        "A": "Disable authentication",
+        "B": "Run it with root access",
+        "C": "Disable anonymous-auth",
+        "D": "Expose all ports"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "anonymous-auth should be disabled for secure Kubelet configuration.",
+      "Domain": "Kubernetes Cluster Component Security"
+    },
+    {
+      "Question": "Which component in Kubernetes starts and stops containers?",
+      "Options": {
+        "A": "Controller Manager",
+        "B": "Kubelet",
+        "C": "Container Runtime",
+        "D": "Etcd"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "The container runtime handles container lifecycle.",
+      "Domain": "Kubernetes Cluster Component Security"
+    },
+    {
+      "Question": "What is the most restrictive Pod Security Standard level?",
+      "Options": {
+        "A": "Privileged",
+        "B": "Baseline",
+        "C": "Restricted",
+        "D": "Permissive"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Restricted applies tightest security policies.",
+      "Domain": "Kubernetes Security Fundamentals"
+    },
+    {
+      "Question": "Which RBAC resource binds users to roles?",
+      "Options": {
+        "A": "Role",
+        "B": "ClusterRole",
+        "C": "RoleBinding",
+        "D": "Policy"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "RoleBinding associates subjects with Roles or ClusterRoles.",
+      "Domain": "Kubernetes Security Fundamentals"
+    },
+    {
+      "Question": "What defines a trust boundary in Kubernetes?",
+      "Options": {
+        "A": "A firewall",
+        "B": "A set of network rules",
+        "C": "A boundary requiring validation and control",
+        "D": "A control plane component"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Trust boundaries separate levels of access and trust.",
+      "Domain": "Kubernetes Threat Model"
+    },
+    {
+      "Question": "What threat is associated with privilege escalation?",
+      "Options": {
+        "A": "Limiting permissions",
+        "B": "Creating RBAC wildcards",
+        "C": "Restricting service accounts",
+        "D": "Using namespaces"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Wildcards in RBAC can allow unintended privilege escalation.",
+      "Domain": "Kubernetes Threat Model"
+    },
+    {
+      "Question": "Which of the following helps secure the container supply chain?",
+      "Options": {
+        "A": "SBOM",
+        "B": "COSIGN",
+        "C": "Latest image tag",
+        "D": "Disable image scanning"
+      },
+      "Type": "Multiple",
+      "CorrectAnswer": [
+        "A",
+        "B"
+      ],
+      "Explanation": "SBOM and Cosign help verify and secure images.",
+      "Domain": "Platform Security"
+    },
+    {
+      "Question": "What is the purpose of imagePullSecrets in Kubernetes?",
+      "Options": {
+        "A": "To pull secrets from other pods",
+        "B": "To authenticate with private registries",
+        "C": "To store configuration data",
+        "D": "To configure RBAC"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "imagePullSecrets are used to authenticate with private container registries.",
+      "Domain": "Platform Security"
+    },
+    {
+      "Question": "Which framework is used to protect health data in the USA?",
+      "Options": {
+        "A": "GDPR",
+        "B": "HIPAA",
+        "C": "MITRE",
+        "D": "STRIDE"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "HIPAA is used for healthcare data compliance in the US.",
+      "Domain": "Compliance and Security Frameworks"
+    },
+    {
+      "Question": "Which of the following are threat modeling frameworks?",
+      "Options": {
+        "A": "MITRE ATT&CK",
+        "B": "STRIDE",
+        "C": "HIPAA",
+        "D": "OWASP"
+      },
+      "Type": "Multiple",
+      "CorrectAnswer": [
+        "A",
+        "B"
+      ],
+      "Explanation": "MITRE and STRIDE are threat modeling frameworks.",
+      "Domain": "Compliance and Security Frameworks"
+    },
+    {
+      "Question": "Which Kubernetes component enforces authentication and authorization?",
+      "Options": {
+        "A": "Kubelet",
+        "B": "Controller Manager",
+        "C": "API Server",
+        "D": "Scheduler"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "The API server is responsible for authentication and authorization.",
+      "Domain": "Kubernetes Cluster Component Security"
+    },
+    {
+      "Question": "How can Kubelet security be enhanced?",
+      "Options": {
+        "A": "Disable authentication",
+        "B": "Run it with root access",
+        "C": "Disable anonymous-auth",
+        "D": "Expose all ports"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "anonymous-auth should be disabled for secure Kubelet configuration.",
+      "Domain": "Kubernetes Cluster Component Security"
+    },
+    {
+      "Question": "Which component in Kubernetes starts and stops containers?",
+      "Options": {
+        "A": "Controller Manager",
+        "B": "Kubelet",
+        "C": "Container Runtime",
+        "D": "Etcd"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "The container runtime handles container lifecycle.",
+      "Domain": "Kubernetes Cluster Component Security"
+    },
+    {
+      "Question": "What is the most restrictive Pod Security Standard level?",
+      "Options": {
+        "A": "Privileged",
+        "B": "Baseline",
+        "C": "Restricted",
+        "D": "Permissive"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Restricted applies tightest security policies.",
+      "Domain": "Kubernetes Security Fundamentals"
+    },
+    {
+      "Question": "Which RBAC resource binds users to roles?",
+      "Options": {
+        "A": "Role",
+        "B": "ClusterRole",
+        "C": "RoleBinding",
+        "D": "Policy"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "RoleBinding associates subjects with Roles or ClusterRoles.",
+      "Domain": "Kubernetes Security Fundamentals"
+    },
+    {
+      "Question": "What defines a trust boundary in Kubernetes?",
+      "Options": {
+        "A": "A firewall",
+        "B": "A set of network rules",
+        "C": "A boundary requiring validation and control",
+        "D": "A control plane component"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Trust boundaries separate levels of access and trust.",
+      "Domain": "Kubernetes Threat Model"
+    },
+    {
+      "Question": "What threat is associated with privilege escalation?",
+      "Options": {
+        "A": "Limiting permissions",
+        "B": "Creating RBAC wildcards",
+        "C": "Restricting service accounts",
+        "D": "Using namespaces"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Wildcards in RBAC can allow unintended privilege escalation.",
+      "Domain": "Kubernetes Threat Model"
+    },
+    {
+      "Question": "Which of the following helps secure the container supply chain?",
+      "Options": {
+        "A": "SBOM",
+        "B": "COSIGN",
+        "C": "Latest image tag",
+        "D": "Disable image scanning"
+      },
+      "Type": "Multiple",
+      "CorrectAnswer": [
+        "A",
+        "B"
+      ],
+      "Explanation": "SBOM and Cosign help verify and secure images.",
+      "Domain": "Platform Security"
+    },
+    {
+      "Question": "What is the purpose of imagePullSecrets in Kubernetes?",
+      "Options": {
+        "A": "To pull secrets from other pods",
+        "B": "To authenticate with private registries",
+        "C": "To store configuration data",
+        "D": "To configure RBAC"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "imagePullSecrets are used to authenticate with private container registries.",
+      "Domain": "Platform Security"
+    },
+    {
+      "Question": "Which framework is used to protect health data in the USA?",
+      "Options": {
+        "A": "GDPR",
+        "B": "HIPAA",
+        "C": "MITRE",
+        "D": "STRIDE"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "HIPAA is used for healthcare data compliance in the US.",
+      "Domain": "Compliance and Security Frameworks"
+    },
+    {
+      "Question": "Which of the following are threat modeling frameworks?",
+      "Options": {
+        "A": "MITRE ATT&CK",
+        "B": "STRIDE",
+        "C": "HIPAA",
+        "D": "OWASP"
+      },
+      "Type": "Multiple",
+      "CorrectAnswer": [
+        "A",
+        "B"
+      ],
+      "Explanation": "MITRE and STRIDE are threat modeling frameworks.",
+      "Domain": "Compliance and Security Frameworks"
+    },
+    {
+      "Question": "Which Kubernetes component enforces authentication and authorization?",
+      "Options": {
+        "A": "Kubelet",
+        "B": "Controller Manager",
+        "C": "API Server",
+        "D": "Scheduler"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "The API server is responsible for authentication and authorization.",
+      "Domain": "Kubernetes Cluster Component Security"
+    },
+    {
+      "Question": "How can Kubelet security be enhanced?",
+      "Options": {
+        "A": "Disable authentication",
+        "B": "Run it with root access",
+        "C": "Disable anonymous-auth",
+        "D": "Expose all ports"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "anonymous-auth should be disabled for secure Kubelet configuration.",
+      "Domain": "Kubernetes Cluster Component Security"
+    },
+    {
+      "Question": "Which component in Kubernetes starts and stops containers?",
+      "Options": {
+        "A": "Controller Manager",
+        "B": "Kubelet",
+        "C": "Container Runtime",
+        "D": "Etcd"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "The container runtime handles container lifecycle.",
+      "Domain": "Kubernetes Cluster Component Security"
+    },
+    {
+      "Question": "What is the most restrictive Pod Security Standard level?",
+      "Options": {
+        "A": "Privileged",
+        "B": "Baseline",
+        "C": "Restricted",
+        "D": "Permissive"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Restricted applies tightest security policies.",
+      "Domain": "Kubernetes Security Fundamentals"
+    },
+    {
+      "Question": "Which RBAC resource binds users to roles?",
+      "Options": {
+        "A": "Role",
+        "B": "ClusterRole",
+        "C": "RoleBinding",
+        "D": "Policy"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "RoleBinding associates subjects with Roles or ClusterRoles.",
+      "Domain": "Kubernetes Security Fundamentals"
+    },
+    {
+      "Question": "What defines a trust boundary in Kubernetes?",
+      "Options": {
+        "A": "A firewall",
+        "B": "A set of network rules",
+        "C": "A boundary requiring validation and control",
+        "D": "A control plane component"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Trust boundaries separate levels of access and trust.",
+      "Domain": "Kubernetes Threat Model"
+    },
+    {
+      "Question": "What threat is associated with privilege escalation?",
+      "Options": {
+        "A": "Limiting permissions",
+        "B": "Creating RBAC wildcards",
+        "C": "Restricting service accounts",
+        "D": "Using namespaces"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Wildcards in RBAC can allow unintended privilege escalation.",
+      "Domain": "Kubernetes Threat Model"
+    },
+    {
+      "Question": "Which of the following helps secure the container supply chain?",
+      "Options": {
+        "A": "SBOM",
+        "B": "COSIGN",
+        "C": "Latest image tag",
+        "D": "Disable image scanning"
+      },
+      "Type": "Multiple",
+      "CorrectAnswer": [
+        "A",
+        "B"
+      ],
+      "Explanation": "SBOM and Cosign help verify and secure images.",
+      "Domain": "Platform Security"
+    },
+    {
+      "Question": "What is the purpose of imagePullSecrets in Kubernetes?",
+      "Options": {
+        "A": "To pull secrets from other pods",
+        "B": "To authenticate with private registries",
+        "C": "To store configuration data",
+        "D": "To configure RBAC"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "imagePullSecrets are used to authenticate with private container registries.",
+      "Domain": "Platform Security"
+    },
+    {
+      "Question": "Which Kubernetes component enforces authentication and authorization?",
+      "Options": {
+        "A": "Kubelet",
+        "B": "Controller Manager",
+        "C": "API Server",
+        "D": "Scheduler"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "The API server is responsible for authentication and authorization.",
+      "Domain": "Kubernetes Cluster Component Security"
+    },
+    {
+      "Question": "What is the most restrictive Pod Security Standard level?",
+      "Options": {
+        "A": "Privileged",
+        "B": "Baseline",
+        "C": "Restricted",
+        "D": "Permissive"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Restricted applies tightest security policies.",
+      "Domain": "Kubernetes Security Fundamentals"
+    },
+    {
+      "Question": "Which RBAC resource binds users to roles?",
+      "Options": {
+        "A": "Role",
+        "B": "ClusterRole",
+        "C": "RoleBinding",
+        "D": "Policy"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "RoleBinding associates subjects with Roles or ClusterRoles.",
+      "Domain": "Kubernetes Security Fundamentals"
+    },
+    {
+      "Question": "What defines a trust boundary in Kubernetes?",
+      "Options": {
+        "A": "A firewall",
+        "B": "A set of network rules",
+        "C": "A boundary requiring validation and control",
+        "D": "A control plane component"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Trust boundaries separate levels of access and trust.",
+      "Domain": "Kubernetes Threat Model"
+    },
+    {
+      "Question": "What threat is associated with privilege escalation?",
+      "Options": {
+        "A": "Limiting permissions",
+        "B": "Creating RBAC wildcards",
+        "C": "Restricting service accounts",
+        "D": "Using namespaces"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "Wildcards in RBAC can allow unintended privilege escalation.",
+      "Domain": "Kubernetes Threat Model"
+    },
+    {
+      "Question": "Which of the following helps secure the container supply chain?",
+      "Options": {
+        "A": "SBOM",
+        "B": "COSIGN",
+        "C": "Latest image tag",
+        "D": "Disable image scanning"
+      },
+      "Type": "Multiple",
+      "CorrectAnswer": [
+        "A",
+        "B"
+      ],
+      "Explanation": "SBOM and Cosign help verify and secure images.",
+      "Domain": "Platform Security"
+    },
+    {
+      "Question": "What is the purpose of imagePullSecrets in Kubernetes?",
+      "Options": {
+        "A": "To pull secrets from other pods",
+        "B": "To authenticate with private registries",
+        "C": "To store configuration data",
+        "D": "To configure RBAC"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "B"
+      ],
+      "Explanation": "imagePullSecrets are used to authenticate with private container registries.",
+      "Domain": "Platform Security"
+    },
+    {
+      "Question": "What is the most restrictive Pod Security Standard level?",
+      "Options": {
+        "A": "Privileged",
+        "B": "Baseline",
+        "C": "Restricted",
+        "D": "Permissive"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Restricted applies tightest security policies.",
+      "Domain": "Kubernetes Security Fundamentals"
+    },
+    {
+      "Question": "Which RBAC resource binds users to roles?",
+      "Options": {
+        "A": "Role",
+        "B": "ClusterRole",
+        "C": "RoleBinding",
+        "D": "Policy"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "RoleBinding associates subjects with Roles or ClusterRoles.",
+      "Domain": "Kubernetes Security Fundamentals"
+    },
+    {
+      "Question": "What is the most restrictive Pod Security Standard level?",
+      "Options": {
+        "A": "Privileged",
+        "B": "Baseline",
+        "C": "Restricted",
+        "D": "Permissive"
+      },
+      "Type": "Single",
+      "CorrectAnswer": [
+        "C"
+      ],
+      "Explanation": "Restricted applies tightest security policies.",
+      "Domain": "Kubernetes Security Fundamentals"
+    }
+  ]
+}

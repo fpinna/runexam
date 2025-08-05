@@ -83,3 +83,5 @@ Example with custom port
 ```
 docker run -it --rm -p 8181:8181 -v $PWD/myexam.json:/app/exam.json fpinna/runexam /app/exam.json --port 8181
 ```
+
+# inspired by https://github.com/thiago4go/kubernetes-security-kcsa-mock
