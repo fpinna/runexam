@@ -7,7 +7,7 @@
     "TestVersion": "1.0",
     "TestAuthor": "Kubernetes Community",
     "TestDate": "2023-10-01",
-    "TestDuration": 60,
+    "TestDuration": 1,
 
     "TotalQuestions": 5,
     "ExamDomains": [

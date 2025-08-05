@@ -10,6 +10,7 @@ import (
 	"runexam/types"
 	"runexam/utils"
 	"strconv"
+	"time"
 )
 
 var (
@@ -27,6 +28,8 @@ func StartServer(jsonPath, listen string, port int) {
 	if err := json.Unmarshal(data, &questionsData); err != nil {
 		log.Fatalf("Error decoding JSON: %v", err)
 	}
+
+	questionsData.TestMetadata.TestDate = time.Now().Format("01/Jan/2006")
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", showExam)
