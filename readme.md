@@ -9,6 +9,10 @@
 **RunExam** is a modern self-hosted exam simulator for certification practice, with instant correction, explanations, PDF export, and ~~beautiful~~ UI.  
 It works with custom JSON files defining your own set of questions.
 
+*Disclaimer*
+
+LLMs generated all files inside exam-data. I've been using them to achieve my certification objectives. 
+
 ---
 
 ## Features
@@ -37,7 +41,7 @@ go build -o runexam main.go
 
 ```
 Run (example using a KCNA mock exam)
-./runexam _testdata/kcna_simulator_60_questions_full.json
+./runexam exam-data/kubernetes/kcna_simulator_60_questions_full.json
 ```
 
 - Default port: 9171
@@ -57,7 +61,13 @@ Example:
 Now access: http://localhost:9171
 
 
-# Run with Docker
+# How-to use LLMs to help you generate questions data files for free?
+
+
+
+
+
+# Run with Docker - working in progress
 The easiest way:
 
 
