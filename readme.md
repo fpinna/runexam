@@ -24,7 +24,7 @@ LLMs generated all files inside exam-data. I've been using them to achieve my ce
 - Instant correction and review
 - PDF export matching your exam report
 - Easily pluggable JSON format for new exams
-- [Standard exam definition](exam-defs.md) - json format
+- [Exam json scheme definitions](exam-defs.md) - json schema
 
 
 ---
